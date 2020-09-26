@@ -4,13 +4,13 @@ import {
   ADD_TODO,
   TOGGLE_TODO,
   TodoActionTypes,
-} from "../types";
+} from "../types/todo";
 
 const initialState: TodoState = {
   todos: [{ id: 1, text: "ok", toggled: false }],
 };
 
-export function todoReducer(
+export default function todoReducer(
   state = initialState,
   action: TodoActionTypes
 ): TodoState {

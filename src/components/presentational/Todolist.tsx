@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
-import { TodoItem } from "../../store/types";
+import { TodoItem } from "../../store/types/todo";
 
 interface Props {
   toggleTodo: (args: number) => void;

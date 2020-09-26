@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { createStore, compose } from "redux";
-import { todoReducer } from "./store/reducers/todo";
+import { rootReducer } from "./store/reducers/index";
 
 declare global {
   interface Window {
@@ -15,7 +15,7 @@ declare global {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(todoReducer, composeEnhancers());
+const store = createStore(rootReducer, composeEnhancers());
 
 ReactDOM.render(
   <React.StrictMode>
