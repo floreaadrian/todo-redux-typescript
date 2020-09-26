@@ -7,7 +7,7 @@ import {
 } from "../types/todo";
 
 const initialState: TodoState = {
-  todos: [{ id: 1, text: "ok", toggled: false }],
+  todos: [{ id: -1, text: "ok", toggled: false }],
 };
 
 export default function todoReducer(

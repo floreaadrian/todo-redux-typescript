@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FilterLink from "../containers/FilterLink";
 
 import { VisibilityTypes } from "../../store/types/visibility";

@@ -16,7 +16,7 @@ const InputField = (props: Props) => {
           setText("");
         }}
       >
-        <input onChange={(e) => setText(e.target.value)}></input>
+        <input onChange={(e) => setText(e.target.value)} value={text}></input>
         <button type="submit">Add Todo</button>
       </form>
     </div>
