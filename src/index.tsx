@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { createStore, compose } from "redux";
 import { rootReducer } from "./store/reducers/index";
+import "rsuite/dist/styles/rsuite-default.css";
 
 declare global {
   interface Window {
