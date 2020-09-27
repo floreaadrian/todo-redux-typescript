@@ -2,6 +2,7 @@ import React, { createRef } from "react";
 
 import { Button, Input } from "rsuite";
 import { useMediaQuery } from "react-responsive";
+import "./InputField.css";
 
 interface Props {
   addTodo: (text: string) => void;
@@ -14,38 +15,49 @@ const InputField = (props: Props) => {
   });
 
   return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          props.addTodo(inputRef.current?.value || "");
-          const currentRef = inputRef.current;
-          if (currentRef != null) currentRef.value = "";
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        props.addTodo(inputRef.current?.value || "");
+        const currentRef = inputRef.current;
+        if (currentRef != null) currentRef.value = "";
+      }}
+      style={{
+        maxWidth: "490px",
+        width: shouldAddTopMargin ? "390px" : "auto",
+      }}
+    >
+      <div
+        style={{
+          margin: "auto",
+          display: "flex",
+          flexDirection: shouldAddTopMargin ? "column" : "row",
         }}
       >
         <Input
           style={{
-            maxWidth: "300px",
+            minWidth: shouldAddTopMargin ? "0px" : "300px",
             height: "45px",
+            flex: "2",
             // margin: "0px",
-            display: "inline",
+            // display: "inline",
           }}
           inputRef={inputRef}
           placeholder="What do you wanna do?"
         ></Input>
         <Button
+          className="input-button"
           type="submit"
           color="blue"
           style={{
             marginLeft: shouldAddTopMargin ? "0px" : "10px",
             marginTop: shouldAddTopMargin ? "10px" : "0px",
-            height: "45px",
           }}
         >
           Add Todo
         </Button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

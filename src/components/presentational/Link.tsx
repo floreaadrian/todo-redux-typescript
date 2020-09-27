@@ -10,7 +10,7 @@ interface Props {
 const Link = (props: Props) => {
   return (
     <Button
-      // backgroundColor={props.active ? "#00FF00" : "#808080"}
+      color={props.active ? "blue" : undefined}
       onClick={props.onClick}
       disabled={props.active}
       style={{

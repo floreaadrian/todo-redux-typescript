@@ -1,0 +1,7 @@
+.input-button {
+  display: block;
+  width: 100%;
+  margin-left: 10px;
+  flex: 1;
+  height: 45px;
+}

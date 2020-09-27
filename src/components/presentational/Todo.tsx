@@ -1,5 +1,7 @@
 import React from "react";
 
+import { List, Toggle } from "rsuite";
+
 interface Props {
   onClick: VoidFunction;
   toggled: boolean;
@@ -7,14 +9,16 @@ interface Props {
 }
 
 const Todo = (props: Props) => (
-  <li
+  <List.Item
     onClick={props.onClick}
     style={{
       textDecoration: props.toggled ? "line-through" : "none",
+      fontSize: 20,
     }}
   >
-    {props.text}
-  </li>
+    <Toggle checked={props.toggled} />
+    <span style={{ marginLeft: "20px" }}>{props.text}</span>
+  </List.Item>
 );
 
 export default Todo;
