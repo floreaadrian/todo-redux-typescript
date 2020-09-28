@@ -1,6 +1,8 @@
 import React from "react";
 
-import { List, Toggle } from "rsuite";
+import { List } from "rsuite";
+import Checkmark from "react-typescript-checkmark";
+import "./Checkmark.css";
 
 interface Props {
   onClick: VoidFunction;
@@ -12,12 +14,13 @@ const Todo = (props: Props) => (
   <List.Item
     onClick={props.onClick}
     style={{
-      textDecoration: props.toggled ? "line-through" : "none",
       fontSize: 20,
     }}
   >
-    <Toggle checked={props.toggled} />
-    <span style={{ marginLeft: "20px" }}>{props.text}</span>
+    <span style={{ display: "flex", alignItems: "center" }}>
+      {props.toggled ? <Checkmark size="md" /> : <div className="dot" />}
+      <span style={{ marginLeft: "10px" }}>{props.text}</span>
+    </span>
   </List.Item>
 );
 

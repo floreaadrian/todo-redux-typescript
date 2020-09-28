@@ -46,13 +46,14 @@ const InputField = (props: Props) => {
           placeholder="What do you wanna do?"
         ></Input>
         <Button
-          className="input-button"
           type="submit"
-          color="blue"
           style={{
             marginLeft: shouldAddTopMargin ? "0px" : "10px",
             marginTop: shouldAddTopMargin ? "10px" : "0px",
+            backgroundColor: "#7ac142",
+            color: "white",
           }}
+          className="input-button"
         >
           Add Todo
         </Button>

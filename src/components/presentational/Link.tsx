@@ -10,12 +10,12 @@ interface Props {
 const Link = (props: Props) => {
   return (
     <Button
-      color={props.active ? "blue" : undefined}
       onClick={props.onClick}
-      disabled={props.active}
       style={{
         marginLeft: "4px",
         marginRight: "4px",
+        backgroundColor: props.active ? "#7ac142" : "#F7F7FA",
+        color: props.active ? "white" : "#575757",
       }}
     >
       {props.children}
